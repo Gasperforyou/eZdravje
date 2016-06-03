@@ -9,7 +9,13 @@
   </style>
   <script src="knjiznice/js/jquery-2.2.3.min.js"></script>
   <script src="knjiznice/js/bootstrap.min.js"></script>
+  <script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
   <script src="knjiznice/js/koda.js"></script>
+    <script type="text/javascript" src="https://iop.io/js/vendor/polymer/PointerEvents/pointerevents.js"></script>
+    <script type="text/javascript" src="https://iop.io/js/vendor/polymer/PointerGestures/pointergestures.js"></script>
+    <script type="text/javascript" src="https://iop.io/js/iopctrl.js"></script>
+  
+  <link rel="stylesheet" type="text/css" href="knjiznice/css/stili.css">
 </head>
 <body>
 
@@ -22,14 +28,23 @@
           <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
         </button>
         <!-- ZAČETEK: Ime vaše aplikacije -->
-        <a class="navbar-brand" href="index.html">{ime vaše aplikacije}</a>
+        <a class="navbar-brand" href="index.html">Zvalnik</a>
         <!-- KONEC: Ime vaše aplikacije -->
       </div>
       <div class="collapse navbar-collapse" id="menujska-vrstica">
         <ul class="nav navbar-nav">
           <li><a href="opis.html">Opis ideje</a></li>
           <li><a href="nacrt.html">Načrt informacijske rešitve</a></li>
-          <li><a href="#">Generiranje podatkov</a></li>
+          <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Generiranje podatkov
+            <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Primer 1</a></li>
+              <li><a href="#">Primer 2</a></li>
+              <li><a href="#">Primer 3</a></li> 
+            </ul>
+          </li>
+          
         </ul>
       </div>
     </div>
@@ -40,11 +55,46 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-12 text-center">
-        <p class="lead"><strong>TO-DO</strong>: Na tem mestu implementirajte vašo aplikacijo.</p>
-      </div>
+        
+        
+        <!--input za EhrID -->
+        <form class="form-inline" role="form">
+        <div class="form-group">
+          <label for="focusedInput">EhrID: </label>
+          <input class="form-control" id="focusedInput" type="text">
+        </div>
+        
+        <button type="button" class="btn btn-primary">Prikaži</button>
+        
+        <hr>
+        <div id = "Sirina">
+          <div id = "Levo">
+            <script type="text/javascript" src="https://www.healthtap.com/widget/tips.js" ></script><div id="htapWidgetTips" data-topics="15581" data-topicnames="Adolescent health"><span>Powered by</span> <a href="https://www.healthtap.com">HealthTap</a><div id="HtInboundLinks"> With content about: <br><br><a href="https://www.healthtap.com/topics/Adolescent health">Adolescent health</a></div></div>
+          </div>
+          
+          <div id = "Sredina">
+            <h3>Arhiv podatkov za uporabnika:</h3>
+            <div id = "MsterDetail"></div>
+          </div>
+          
+          <div id = "Desno">
+            <script type="text/javascript" src="https://www.healthtap.com/widget/askdoc.js" ></script><div id="htapWidgetAskdoc" data-color="rgb(246, 246, 246)"><span>Powered by</span> <a href="https://www.healthtap.com">HealthTap</a></div>
+          </div>
+        </div>
+        
+        <hr>
+    
+        
+      
+          <form>
+            <label><input type="radio" name="mode" value="grouped"> Grouped</label>
+            <label><input type="radio" name="mode" value="stacked" checked> Stacked</label>
+          </form>
+          <graf></graf>
+          </div>
     </div>
   </div>
   <!-- KONEC: Vsebina aplikacije -->
-
+<script src="knjiznice/js/graf.js"></script>
 </body>
 </html>

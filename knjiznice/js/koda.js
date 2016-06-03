@@ -32,7 +32,8 @@ function getSessionId() {
  */
 function generirajPodatke(stPacienta) {
   ehrId = "";
-
+  
+  
   // TODO: Potrebno implementirati
 
   return ehrId;
@@ -40,3 +41,6 @@ function generirajPodatke(stPacienta) {
 
 
 // TODO: Tukaj implementirate funkcionalnost, ki jo podpira vaša aplikacija
+
+
+

@@ -11,9 +11,6 @@
   <script src="knjiznice/js/bootstrap.min.js"></script>
   <script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
   <script src="knjiznice/js/koda.js"></script>
-    <script type="text/javascript" src="https://iop.io/js/vendor/polymer/PointerEvents/pointerevents.js"></script>
-    <script type="text/javascript" src="https://iop.io/js/vendor/polymer/PointerGestures/pointergestures.js"></script>
-    <script type="text/javascript" src="https://iop.io/js/iopctrl.js"></script>
   
   <link rel="stylesheet" type="text/css" href="knjiznice/css/stili.css">
 </head>
@@ -39,9 +36,9 @@
             <a class="dropdown-toggle" data-toggle="dropdown" href="#">Generiranje podatkov
             <span class="caret"></span></a>
             <ul class="dropdown-menu">
-              <li><a href="#">Primer 1</a></li>
-              <li><a href="#">Primer 2</a></li>
-              <li><a href="#">Primer 3</a></li> 
+              <li><a id = "primer1" href="#">Primer 1</a></li>
+              <li><a id = "primer2" href="#">Primer 2</a></li>
+              <li><a id = "primer3" href="#">Primer 3</a></li> 
             </ul>
           </li>
           
@@ -61,10 +58,10 @@
         <form class="form-inline" role="form">
         <div class="form-group">
           <label for="focusedInput">EhrID: </label>
-          <input class="form-control" id="focusedInput" type="text">
+          <input class="form-control" id="vnos1" type="text">
         </div>
         
-        <button type="button" class="btn btn-primary">Prikaži</button>
+        <button id = "gumb1" type = "button" class="btn btn-primary">Prikaži</button>
         
         <hr>
         <div id = "Sirina">
@@ -74,7 +71,7 @@
           
           <div id = "Sredina">
             <h3>Arhiv podatkov za uporabnika:</h3>
-            <div id = "MsterDetail"></div>
+            <div id = "MasterDetail"></div>
           </div>
           
           <div id = "Desno">
@@ -90,7 +87,11 @@
             <label><input type="radio" name="mode" value="grouped"> Grouped</label>
             <label><input type="radio" name="mode" value="stacked" checked> Stacked</label>
           </form>
-          <graf></graf>
+          
+          <h6>Po vrsti si sledijo stolpci za krvni pritisk, temperaturo, višino,  pulz, spO2 in težo.</h6>
+          
+          <div id = "ocena"></div>
+          <graf  id = "graf"></graf>
           </div>
     </div>
   </div>

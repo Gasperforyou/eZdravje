@@ -33,8 +33,6 @@ function getSessionId() {
 function generirajPodatke(stPacienta) {
     sessionId = getSessionId();
     
-    primerki = [["Micka", "Županova", "12.1.1940", [], ]];
-    
   ehrId = "";
   // TODO: Potrebno implementirati
   $.ajax({
@@ -79,7 +77,7 @@ function generirajPodatke(stPacienta) {
 		                
 		                var podatki = 
 		                {1:{
-                    			// Struktura predloge je na voljo na naslednjem spletnem naslovu:
+		                	// Struktura predloge je na voljo na naslednjem spletnem naslovu:
                           // https://rest.ehrscape.com/rest/v1/template/Vital%20Signs/example
                     		    1:{"ctx/language": "en",
                     		    "ctx/territory": "SI",
@@ -237,22 +235,7 @@ function generirajPodatke(stPacienta) {
 }
 
 
-// TODO: Tukaj implementirate funkcionalnost, ki jo podpira vaša aplikacija
-$(document).ready(function(){
-	
-	$("#primer1").click(function(){
-	    $("#vnos1").val(generirajPodatke(1));
-	});
-	
-	$("#primer2").click(function(){
-	    $("#vnos1").val(generirajPodatke(2));
-	});
-	
-	$("#primer3").click(function(){
-	    $("#vnos1").val(generirajPodatke(3));
-	});
-	
-	var ocena = function(podatki, data){
+var ocena = function(podatki, data){
 	    string = ""
 	    ocena1 = "povprečno";
 	    if(podatki["blood_pressure"][0].diastolic<100 || podatki["blood_pressure"][0].systolic >150 || podatki["body_temperature"][0]["temperature"]<35 || podatki["body_temperature"][0]["temperature"]>37) ocena1 = "slabo";
@@ -261,10 +244,9 @@ $(document).ready(function(){
 	    string += data.party.firstNames +" "+ data.party.lastNames+" vaše stanje je: " + ocena1;
 	    document.getElementById("ocena").innerHTML = string;
 	}
-	
-    $("#gumb1").click(function(){
-        
-        sessionId = getSessionId();
+
+var prikazi = function(){
+	        sessionId = getSessionId();
         
         EhrID = $("#vnos1").val();
         if(EhrID && !(EhrID.trim().length == 0)){
@@ -313,7 +295,6 @@ $(document).ready(function(){
 	    	    document.getElementById("graf").innerHTML = "";
 	    	    narisiGraf(podatki);
 	    	    
-	    	
 	    	    
 	    	    },
 	    	error: function(err){console.log(err)}
@@ -321,5 +302,23 @@ $(document).ready(function(){
 	    	    
         }
         
-});
+}
+// TODO: Tukaj implementirate funkcionalnost, ki jo podpira vaša aplikacija
+$(document).ready(function(){
+	
+	$("#primer1").click(function(){
+	    $("#vnos1").val(generirajPodatke(1));
+	});
+	
+	$("#primer2").click(function(){
+	    $("#vnos1").val(generirajPodatke(2));
+	});
+	
+	$("#primer3").click(function(){
+	    $("#vnos1").val(generirajPodatke(3));
+	});
+	
+    $("#gumb1").click(function(){
+        prikazi();
+    });
 });

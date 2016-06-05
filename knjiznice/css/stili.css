@@ -1,0 +1,50 @@
+#Levo{
+    float:left;
+    width:30%;
+}
+
+#Sredina {
+    float:left;
+    width:33%;
+}
+
+#Desno {
+    width: auto;
+}
+
+#Sirina{
+    width:100%;
+    margin:0;
+    overflow: hidden;
+}
+
+#htapWidgetTips{
+    height: 700px; width: 90%; float:left;
+}
+
+#htapWidgetAskdoc{
+    height: 700px; width: 80%; float:right;
+}
+
+#MsterDetail{
+    width: 100%;
+}
+
+
+/* za graf*/
+
+text {
+  font: 10px sans-serif;
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+svg{
+    display: block;
+    margin: auto;
+}
